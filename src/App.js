@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Main from "./components/Home";
+import AddNewProduct from "./components/AddNewProduct";
 
-function App() {
+const x = "LÊ TRƯỜNG HOAN";
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-header contentLeft">
+        <div id="logo1">
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
+        <p>Hello Tôi là {x}, Tôi đang làm web React đầu tiên nè :)) hihihihi</p>
+        <Main />
+        <br />
+        <br />
       </header>
+      <div className="contentRight">
+        <AddNewProduct />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
