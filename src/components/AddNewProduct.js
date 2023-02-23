@@ -1,15 +1,44 @@
 import React, { useState } from "react";
 
 const AddNewProduct = () => {
+  let check = localStorage.getItem("producList");
+  if (!check) {
+    localStorage.setItem("idProduct", 0);
+  }
+  const setUpId = () => {
+    localStorage.setItem(
+      "idProduct",
+      Number(localStorage.getItem("idProduct")) + 1
+    );
+    return localStorage.getItem("idProduct");
+  };
+
   const handleClickBut = () => {
     alert("<<<You Clicked!>>>");
+    const idNew = () => {
+      return setUpId();
+    };
+    let id = idNew();
+    console.log(id);
     let obj = {
       name,
       price,
       size,
       color,
+      id: id,
     };
-    console.log(`>>>> Check object: `, obj);
+    let listProduct = localStorage.getItem("producList");
+    if (!listProduct) {
+      localStorage.setItem("producList", JSON.stringify([obj]));
+    } else {
+      let arr = JSON.parse(localStorage.getItem("producList"));
+      arr.push(obj);
+      localStorage.setItem("producList", JSON.stringify(arr));
+      setName("");
+      setSize(0);
+      setColor("");
+      setPrice(0);
+    }
   };
   const handleClearForm = () => {
     setName("");
@@ -26,6 +55,7 @@ const AddNewProduct = () => {
   const handleHideOrShow = () => {
     setIsShowDetail(!isShowDetail);
   };
+
   const handleClickInput = (val, func) => {
     if (val === 0) {
       func("");
@@ -43,6 +73,7 @@ const AddNewProduct = () => {
           Show the form!
         </div>
       )}
+
       {isShowDetail === true ? (
         <fieldset>
           <legend>Add new product</legend>
@@ -94,6 +125,10 @@ const AddNewProduct = () => {
       ) : (
         ""
       )}
+      <div>
+        List Product:
+        {localStorage.getItem("producList")}
+      </div>
     </div>
   );
 };

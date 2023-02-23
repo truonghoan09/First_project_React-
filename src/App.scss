@@ -1,20 +1,29 @@
-  .App {
+.App {
     display: flex;
     padding: 40px;
     background-color: rgb(4, 28, 45);
     min-height: calc(100vh - 80px);
+    .contentLeft{
+        border-right: 1px gray solid;
+      }
+      
+      .contentRight{
+        margin-left: 10px;
+        width: 50%;
+        color: white;
+      }
   }
-
+  
   #logo1 {
     text-align: center;
   }
-
-
+  
+  
   .App-logo {
     height: 50px;
   }
-
-
+  
+  
   .choosediv{
     /* justify-content: center; */
     cursor: pointer;
@@ -25,32 +34,32 @@
     border-bottom: 0px solid;
     overflow: hidden;
   }
-
+  
   .choosediv:last-child {
     border-bottom: solid 1px rgb(61, 255, 13);
   }
-
-
+  
+  
   .choosediv:hover{
     color: red;
   }
-
+  
   .textAdd{
     justify-content: center;
   }
-
+  
   .App-logo {
     justify-content: center;
   }
-
+  
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
     }
   }
-
+  
   .App-header {
-
+  
     /* min-height: 100vh; */
     /* display: flex;
     flex-direction: column;
@@ -61,8 +70,8 @@
     font-size: 16px;
     width: 50%;
   }
-
-
+  
+  
   @keyframes App-logo-spin {
     0% {
       transform: rotate(0deg);
@@ -71,18 +80,10 @@
       transform: rotate(360deg);
     }
   }
+  
+  
 
-
-  .contentLeft{
-    border-right: 1px gray solid;
-  }
-
-  .contentRight{
-    margin-left: 10px;
-    width: 50%;
-    color: white;
-  }
-
+  
   .input-product {
     padding-left: 10px;
     padding-right: 10px ;
@@ -92,7 +93,7 @@
     gap: 5px;
     
   }
-
+  
   .input-product input {
     width: 60%;
     height: 25px;
@@ -100,13 +101,13 @@
     border-radius: 3px;
     outline: none;
   }
-
+  
   .hideAndShow {
     font-size: 13px;
     color: rgb(27, 202, 202);
     cursor: pointer;
   }
-
+  
   
   .addNewProductButt {
     margin-left: 65px;
@@ -126,7 +127,7 @@
     border: 1px solid rgb(255, 54, 9);
     color: rgb(0, 61, 245);
   }
-
+  
   .clearForm {
     margin-left: 10px;
     height: 30px;
@@ -138,9 +139,11 @@
     border-radius: 2px;
     cursor: pointer;
   }
-
-  .clearForm:hover {
+  
+  
+.clearForm:hover{
     background-color: rgb(253, 55, 0);
     border: 1px solid rgb(0, 255, 26);
     color: white;
-  }
+}
+    
